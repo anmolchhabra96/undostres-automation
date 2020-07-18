@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="42725" started-at="2020-07-18T22:39:09Z" finished-at="2020-07-18T22:39:52Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="42725" started-at="2020-07-18T22:39:09Z" finished-at="2020-07-18T22:39:52Z">
+      <class name="test.TestSuite">
+        <test-method status="PASS" signature="before_test_setup()[pri:0, instance:test.TestSuite@435e60ff]" name="before_test_setup" is-config="true" duration-ms="13882" started-at="2020-07-18T22:39:09Z" finished-at="2020-07-18T22:39:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- before_test_setup -->
+        <test-method status="PASS" signature="details()[pri:1, instance:test.TestSuite@435e60ff]" name="details" duration-ms="16793" started-at="2020-07-18T22:39:23Z" description="This function is to fill details" finished-at="2020-07-18T22:39:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- details -->
+        <test-method status="PASS" signature="payment()[pri:2, instance:test.TestSuite@435e60ff]" name="payment" duration-ms="1768" started-at="2020-07-18T22:39:40Z" description="This function is to make payment" finished-at="2020-07-18T22:39:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- payment -->
+        <test-method status="PASS" signature="card_payment()[pri:3, instance:test.TestSuite@435e60ff]" name="card_payment" duration-ms="10232" started-at="2020-07-18T22:39:42Z" description="This function is to fill card details and make payment" finished-at="2020-07-18T22:39:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- card_payment -->
+        <test-method status="PASS" signature="after_test_setup()[pri:0, instance:test.TestSuite@435e60ff]" name="after_test_setup" is-config="true" duration-ms="0" started-at="2020-07-18T22:39:52Z" finished-at="2020-07-18T22:39:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- after_test_setup -->
+      </class> <!-- test.TestSuite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
