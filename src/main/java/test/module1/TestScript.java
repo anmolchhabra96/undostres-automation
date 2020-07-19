@@ -7,6 +7,8 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import utilities.Constants;
@@ -48,6 +50,8 @@ public class TestScript {
 	 */
 	public void payment(WebDriver driver) throws IOException, InterruptedException, URISyntaxException
 	{
+		WebDriverWait wait=new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PropertyReader.fileload("card_name"))));
 		driver.findElement(By.xpath(PropertyReader.fileload("card_name"))).sendKeys(Constants.card_name);
 		driver.findElement(By.xpath(PropertyReader.fileload("card_no"))).sendKeys(Constants.card_no);
 		driver.findElement(By.xpath(PropertyReader.fileload("expmonth"))).sendKeys(Constants.expmonth);
@@ -68,15 +72,17 @@ public class TestScript {
 	public void card_payment(WebDriver driver) throws IOException, InterruptedException, URISyntaxException
 	{
 		int frameIndex = 0;
-		Thread.sleep(Constants.timeout);
+		Thread.sleep(Constants.timeout); 
 		driver.findElement(By.xpath(PropertyReader.fileload("payment_email"))).sendKeys(Constants.payment_email);
 		driver.findElement(By.xpath(PropertyReader.fileload("payment_password"))).sendKeys(Constants.payment_password);
 		List<WebElement> listFrames = driver.findElements(By.tagName("iframe"));
 		driver.switchTo().frame(listFrames.get( frameIndex ));
 		driver.findElement(By.xpath(PropertyReader.fileload("captcha"))).click();  
-		driver.switchTo().defaultContent();
 		Thread.sleep(Constants.timeout);
-		driver.findElement(By.xpath(PropertyReader.fileload("pay"))).click();  
+		driver.switchTo().defaultContent();
+		WebDriverWait wait=new WebDriverWait(driver,60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PropertyReader.fileload("pay"))));
+		driver.findElement(By.xpath(PropertyReader.fileload("pay"))).click();   
 		System.out.println("Test case 3 Passed and User account was locked");	 
 	}
 }

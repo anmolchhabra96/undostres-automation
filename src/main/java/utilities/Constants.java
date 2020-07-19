@@ -7,6 +7,7 @@ package utilities;
 public class Constants {		
 	public static final String Website_URL = "https://prueba.undostres.com.mx/";
 	public static final String chrome_driver = "webdriver.chrome.driver";
+	public static final String firefox_driver = "webdriver.gecko.driver";
 	public static final String mobile = "5523261151";
 	public static final String card_name = "Test";
 	public static final String card_no = "4111111111111111";

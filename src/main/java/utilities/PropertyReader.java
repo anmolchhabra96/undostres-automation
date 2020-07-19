@@ -11,7 +11,7 @@ import java.util.Properties;
  * @author anmol.chhabra
  *
  */
-public class PropertyReader { 
+public class PropertyReader {  
 	/** 
 	 * Reads properties file from 'resources' and returns value from given input key
 	 * @param input
