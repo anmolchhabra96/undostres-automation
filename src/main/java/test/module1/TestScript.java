@@ -63,7 +63,7 @@ public class TestScript {
 	}
 	
 	/**
-	 * To make the Payment successful
+	 * To make the Payment successful after filling details
 	 * @param driver
 	 * @throws IOException
 	 * @throws InterruptedException
