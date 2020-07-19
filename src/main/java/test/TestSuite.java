@@ -71,7 +71,7 @@ public class TestSuite {
 			try{
 				TakesScreenshot screenshot=(TakesScreenshot)driver;
 				File src=screenshot.getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFile(src, new File(Constants.screenshot_path+result.getName()+".png"));
+				FileUtils.copyFile(src, new File(Constants.screenshot_path+result.getName()+".png")); 
 				System.out.println("Successfully captured a screenshot");
 		       }catch (Exception e){
 				System.out.println("Exception while taking screenshot "+e.getMessage());
