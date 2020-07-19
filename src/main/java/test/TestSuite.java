@@ -1,9 +1,16 @@
 package test;
 
+import java.io.File;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -50,9 +57,27 @@ public class TestSuite {
 
 	@AfterTest
 	public void after_test_setup() {
-		System.out.println("---------------Test Script End-----------"); 
+		System.out.println("---------------Test Script End-----------");  
 
 	} 
+	
+	/**
+	 * AfterMethod annotation - This method executes after every test execution if any test case fails then it takes the Screenshot
+	 * @param result
+	 */
+	@AfterMethod 
+	 public void screenShot(ITestResult result){
+		if(ITestResult.FAILURE==result.getStatus()){
+			try{
+				TakesScreenshot screenshot=(TakesScreenshot)driver;
+				File src=screenshot.getScreenshotAs(OutputType.FILE);
+				FileUtils.copyFile(src, new File(Constants.screenshot_path+result.getName()+".png"));
+				System.out.println("Successfully captured a screenshot");
+		       }catch (Exception e){
+				System.out.println("Exception while taking screenshot "+e.getMessage());
+			}
+		}
+	}
 	
 	// ==========================TESTCASES STARTED===============================================================================
 	
